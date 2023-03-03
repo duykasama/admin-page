@@ -74,7 +74,7 @@
 				</div>
 				<div class="col-xs-8 text-right menu-1">
 					<ul>
-						<li><a href="flight.jsp">FLIGHT</a></li>
+                                            <li><a href="${pageContext.request.contextPath}/FlightController">FLIGHT</a></li>
 						<li class="has-dropdown">
 							<a href="#">MANAGE</a>
 							<ul class="dropdown">

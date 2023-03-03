@@ -118,25 +118,24 @@
                                             <th>Edit</th>
                                             <th>Delete</th>
                                         </tr>
-                                         <%
-                                            FlightManger fManager = new FlightManger();
-                                            for (int i =  0; i < 10; i++){
-                                                out.print("<tr><td>" + fManager.get(i).getId() + "</td>");
-                                                out.print("<td>" + fManager.get(i).getAirlineName()+ "</td>");
-                                                out.print("<td>" + fManager.get(i).getDeparture() + "</td>");
-                                                out.print("<td>" + fManager.get(i).getDestination() + "</td>");
-                                                out.print("<td>" + fManager.get(i).getDepartureDate() + "</td>");
-                                                out.print("<td>" + fManager.get(i).getTakeOffTime() + "</td>");
-                                                out.print("<td>" + fManager.get(i).getNoOfSeats() + "</td>");
-                                                out.print("<td><button class=\"pd-setting\">" + fManager.get(i).getStatus() + "</button></td>");
-                                                out.print("<td><a href=\"\">edit</a></td>");
-                                                out.print("<td><a href=\"\"><i class=\"icon-delete\"></i></a></td></tr>");
-                                            }
-                                        %>
+
+                                        <c:forEach var="i" begin="0" end="9">
+                                            <tr><td>${fList.get(i).getId()}</td>
+                                                <td>${fList.get(i).getAirlineName()}</td>
+                                                <td>${fList.get(i).getDeparture()}</td>
+                                                <td>${fList.get(i).getDestination()}</td>
+                                                <td>${fList.get(i).getDepartureDate()}</td>
+                                                <td>${fList.get(i).getTakeOffTime()}</td>
+                                                <td>${fList.get(i).getNoOfSeats()}</td>
+                                                <td><button class="pd-setting">${fList.get(i).getStatus()}</button></td>
+                                                <td><a href="">edit</a></td>
+                                                <td><a href=""><i class=\"icon-delete\"></i></a></td>
+                                            </tr>
+                                        </c:forEach>
                                     </table>
                                     <div class="custom-pagination">
                                         <ul class="pagination">
-                                            <li class="page-item"><a class="page-link" href="./PagingController?pageNumb=2">Previous</a></li>
+                                            <li class="page-item"><a class="page-link" href="./PagingController?pageNumb=">Previous</a></li>
                                             <li class="page-item"><a class="page-link" href="#">1</a></li>
                                             <li class="page-item"><a class="page-link" href="#">2</a></li>
                                             <li class="page-item"><a class="page-link" href="#">3</a></li>

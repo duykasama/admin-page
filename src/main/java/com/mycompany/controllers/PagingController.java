@@ -29,20 +29,25 @@ public class PagingController extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        response.setContentType("text/html;charset=UTF-8");
-        String action = request.getParameter("action");
-        int pageNumber = Integer.parseInt(request.getParameter("pageNumber"));
-        if(action.equals("increase")){
-            request.getSession().setAttribute("pageNumber", ++pageNumber);
-            response.sendRedirect("admin_home.jsp");
-        }else{
-            if(pageNumber == 1){
-                request.getSession().setAttribute("pageNumber", pageNumber);
-            }else{
-                request.getSession().setAttribute("pageNumber", --pageNumber);
-            }
-            response.sendRedirect("admin_home.jsp");
-        }
+        System.out.println("This is paging controller");
+        int pageNumb = Integer.parseInt(request.getParameter("pageNumb"));
+        request.getSession().setAttribute("pageNumb", pageNumb);
+        response.sendRedirect("flight.jsp");
+        
+//        response.setContentType("text/html;charset=UTF-8");
+//        String action = request.getParameter("action");
+//        int pageNumber = Integer.parseInt(request.getParameter("pageNumber"));
+//        if(action.equals("increase")){
+//            request.getSession().setAttribute("pageNumber", ++pageNumber);
+//            response.sendRedirect("admin_home.jsp");
+//        }else{
+//            if(pageNumber == 1){
+//                request.getSession().setAttribute("pageNumber", pageNumber);
+//            }else{
+//                request.getSession().setAttribute("pageNumber", --pageNumber);
+//            }
+//            response.sendRedirect("admin_home.jsp");
+//        }
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

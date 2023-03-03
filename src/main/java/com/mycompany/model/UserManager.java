@@ -41,7 +41,7 @@ public class UserManager extends ArrayList<User>{
             stm.close();
             conn.close();
         } catch (Exception ex) {
-            Logger.getLogger(FlightManger.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(FlightManager.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
     

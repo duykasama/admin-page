@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page import="com.mycompany.model.UserManager"%>
 <!DOCTYPE HTML>
 <!--
@@ -115,93 +116,16 @@
                                     <th>Edit</th>
                                     <th>Delete</th>
                                 </tr>
-                                <%
-                                    UserManager uManager = new UserManager();
-                                    for(int i = 0; i < 1; i++){
-                                        out.print("<tr><td>" + uManager.get(i).getUserId() + "</td>");
-                                        out.print("<td>" + uManager.get(i).getUserName()+ "</td>");
-                                        out.print("<td>" + uManager.get(i).getPhone() + "</td>");
-                                        out.print("<td>" + uManager.get(i).getEmail()+ "</td>");
-                                        out.print("<td><a href=\"\">edit</a></td><td><a href=\"\"><i class=\"icon-delete\"></i></a></td></tr>");
-                                    }
-                                %>
-                                <!--                                <tr>
-                                                                    
-                                                                    <td>VNU001</td>
-                                                                    
-                                                                    <td>Nguyen Hung Hai</td>
-                                                                    <td>012345421</td>
-                                                                    <td>hunghai@gmail.com</td>
-                                                                    <td>hongbiet123</td>
-                                                                    
--->                                                                                                        
-<!--                                                                                                        <td><a href="">edit</a></td>
-                                                                                                        <td><a href=""><i class="icon-delete"></i></a></td>-->
-                                <!--
-                                                                    
-                                                                </tr>
-                                                                <tr>
-                                                                    
-                                                                    <td>VNU001</td>
-                                                                    <td>Nguyen Hung Hai</td>
-                                                                    <td>012345421</td>
-                                                                    <td>hunghai@gmail.com</td>
-                                                                    <td>hongbiet123</td>
-                                                                   
-                                                                                                        <td><a href="">edit</a></td>
-                                                                                                        <td><a href=""><i class="icon-delete"></i></a></td>
-                                                                    
-                                                                </tr>
-                                                                <tr>
-                                                                    
-                                                                    <td>VNU001</td>
-                                                                    
-                                                                    <td>Nguyen Hung Hai</td>
-                                                                    <td>012345421</td>
-                                                                    <td>hunghai@gmail.com</td>
-                                                                    <td>hongbiet123</td>
-                                                                    
-                                                                                                        <td><a href="">edit</a></td>
-                                                                                                        <td><a href=""><i class="icon-delete"></i></a></td>
-                                                                </tr>
-                                                                <tr>
-                                                                    
-                                                                    <td>VNU001</td>
-                                                                    
-                                                                    <td>Nguyen Hung Hai</td>
-                                                                    <td>012345421</td>
-                                                                    <td>hunghai@gmail.com</td>
-                                                                    <td>hongbiet123</td>
-                                                                    
-                                                                                                        <td><a href="">edit</a></td>
-                                                                                                        <td><a href=""><i class="icon-delete"></i></a></td>
-                                                                    
-                                                                </tr>
-                                                                <tr>
-                                                                    
-                                                                    <td>VNU001</td>
-                                                                    
-                                                                    <td>Nguyen Hung Hai</td>
-                                                                    <td>012345421</td>
-                                                                    <td>hunghai@gmail.com</td>
-                                                                    <td>hongbiet123</td>
-                                                                  
-                                                                                                        <td><a href="">edit</a></td>
-                                                                                                        <td><a href=""><i class="icon-delete"></i></a></td>
-                                                                    
-                                                                </tr>
-                                                                <tr>
-                                                                    
-                                                                    <td>VNF001</td>
-                                                                    
-                                                                    <td>Nguyen Hung Hai</td>
-                                                                    <td>012345421</td>
-                                                                    <td>hunghai@gmail.com</td>
-                                                                    <td>hongbiet123</td>
-                                                                 
-                                                                                                        <td><a href="">edit</a></td>
-                                                                                                        <td><a href=""><i class="icon-delete"></i></a></td>
-                                                                </tr>-->
+                                <c:forEach var="i" begin="0" end="9">
+                                    <tr>
+                                        <td>${uManager.get(i).getUserId()}</td>
+                                        <td>${uManager.get(i).getUserName()}</td>
+                                        <td>${uManager.get(i).getPhone()}</td>
+                                        <td>${uManager.get(i).getEmail()}</td>
+                                        <td><a href="">edit</a></td>
+                                        <td><a href=""><i class="icon-delete"></i></a></td></tr>
+                                    </tr>
+                                </c:forEach>
                             </table>
                             <div class="custom-pagination">
 								<ul class="pagination">
