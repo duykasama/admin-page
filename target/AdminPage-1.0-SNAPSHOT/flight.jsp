@@ -1,6 +1,6 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page import="com.mycompany.model.Flight"%>
-<%@page import="com.mycompany.model.FlightManger"%>
+<%@page import="com.mycompany.model.FlightManager"%>
 <!DOCTYPE HTML>
 <!--
         Traveler by freehtml5.co
@@ -118,8 +118,8 @@
                                             <th>Edit</th>
                                             <th>Delete</th>
                                         </tr>
-
-                                        <c:forEach var="i" begin="0" end="9">
+                                        
+                                        <c:forEach var="i" begin="390" end="410">
                                             <tr><td>${fList.get(i).getId()}</td>
                                                 <td>${fList.get(i).getAirlineName()}</td>
                                                 <td>${fList.get(i).getDeparture()}</td>
@@ -132,14 +132,15 @@
                                                 <td><a href=""><i class=\"icon-delete\"></i></a></td>
                                             </tr>
                                         </c:forEach>
-                                    </table>
+                                    </table>                                        
+                                    
                                     <div class="custom-pagination">
                                         <ul class="pagination">
-                                            <li class="page-item"><a class="page-link" href="./PagingController?pageNumb=">Previous</a></li>
+                                            <li class="page-item"><a class="page-link" href="./PagingController">Previous</a></li>
                                             <li class="page-item"><a class="page-link" href="#">1</a></li>
                                             <li class="page-item"><a class="page-link" href="#">2</a></li>
                                             <li class="page-item"><a class="page-link" href="#">3</a></li>
-                                            <li class="page-item"><a class="page-link" href="./PagingController?pageNumb=2">Next</a></li>
+                                            <li class="page-item"><a class="page-link" href="./PagingController">Next</a></li>
                                         </ul>
                                     </div>
                                 </div>

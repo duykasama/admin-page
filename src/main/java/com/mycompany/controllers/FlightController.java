@@ -14,8 +14,6 @@ import javax.servlet.http.HttpServletResponse;
 import com.mycompany.model.FlightManager;
 import com.mycompany.model.Flight;
 
-
-
 /**
  *
  * @author MSI GF63
@@ -34,8 +32,14 @@ public class FlightController extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-        request.getSession().setAttribute("fList", new FlightManager());
+        if (request.getSession().getAttribute("fList") == null) {
+            request.getSession().setAttribute("fList", new FlightManager());
+        }
+//        if (request.getSession().getAttribute("page") == null) {
+//            request.getSession().setAttribute("page", 1);
+//        }
         response.sendRedirect("flight.jsp");
+        System.out.println("parameter is: " + request.getParameter("index"));
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

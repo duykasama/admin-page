@@ -79,7 +79,7 @@
 							<a href="#">MANAGE</a>
 							<ul class="dropdown">
 								
-								<li><a href="user.jsp">USER</a></li>
+                                                            <li><a href="${pageContext.request.contextPath}/UserController">USER</a></li>
 								<li><a href="invoice.jsp">INVOICE</a></li>
 							</ul>
 						</li>

@@ -116,12 +116,12 @@
                                     <th>Edit</th>
                                     <th>Delete</th>
                                 </tr>
-                                <c:forEach var="i" begin="0" end="9">
+                                <c:forEach var="i" begin="0" end="${uList.size() - 1}">
                                     <tr>
-                                        <td>${uManager.get(i).getUserId()}</td>
-                                        <td>${uManager.get(i).getUserName()}</td>
-                                        <td>${uManager.get(i).getPhone()}</td>
-                                        <td>${uManager.get(i).getEmail()}</td>
+                                        <td>${uList.get(i).getUserId()}</td>
+                                        <td>${uList.get(i).getUserName()}</td>
+                                        <td>${uList.get(i).getPhone()}</td>
+                                        <td>${uList.get(i).getEmail()}</td>
                                         <td><a href="">edit</a></td>
                                         <td><a href=""><i class="icon-delete"></i></a></td></tr>
                                     </tr>
